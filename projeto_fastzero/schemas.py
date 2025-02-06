@@ -2,7 +2,7 @@ from pydantic import BaseModel, EmailStr
 
 
 class Message(BaseModel):
-    msssage: str 
+    message: str
 
 
 class UserSchema(BaseModel):
@@ -11,6 +11,11 @@ class UserSchema(BaseModel):
     password: str
 
 
+class UserDB(UserSchema):
+    id: int
+
+
 class UserPublic(BaseModel):
+    id: int
     username: str
     email: EmailStr
